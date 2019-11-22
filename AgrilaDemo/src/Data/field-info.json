@@ -1,0 +1,52 @@
+{
+    "description": {
+        "_id": "field_desc_140",
+        "_rev": "1-dda65d08bf7dc1619f2071c09e0e7fbe",
+        "fieldId": 140,
+        "name": "Тест 13",
+        "regionTag": "",
+        "acreage": 3492381,
+        "docType": "field_description",
+        "soilCategory": "CHALK",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        23.785122972988347,
+                        41.62588548041113
+                    ],
+                    [
+                        23.775509935878972,
+                        41.643847294203596
+                    ],
+                    [
+                        23.805722338222722,
+                        41.63614998692346
+                    ],
+                    [
+                        23.811902147793035,
+                        41.62537221218241
+                    ]
+                ]
+            ]
+        }
+    },
+    "sensors": [
+        {
+            "deviceId": "sens13",
+            "soilMoisture": 0.0,
+            "soilMoisture2": 0.0,
+            "soilTemperature": -50.0,
+            "airHumidity": 0.1,
+            "windDirection": "N",
+            "maxWindSpeed": 0.0,
+            "meanWindSpeed": 0.0,
+            "rainAmoutToday": 1.0,
+            "rainAmoutYesteray": 2.6,
+            "airTemperature": 11.0,
+            "timestamp": "2019-10-24T06:53:40.33664Z",
+            "voltage": 3.972
+        }
+    ]
+}
