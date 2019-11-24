@@ -65,19 +65,28 @@ export default class Test15 extends Component {
     }
     render() {
         console.log(this.state.isLoading);
-        console.log(this.state.data);
+        console.log('Data in state', this.state.data);
         if (this.state.isLoading) {
             return (
                 <View style={[styles.container, styles.horizontal]}>
                     <ActivityIndicator size="large" color="#0000ff" />
-
                 </View>
             );
         }
 
+        if(this.state.data) {
+            return (
+                this.state.data.map((item, index) =>
+                        <View key={index}>
+                            <Text>{item.description}</Text>
+                        </View>
+                    )
+            )
+        }
+
         return (
             <View>
-                <Text> dsdssdssddss </Text>
+                <Text> Test 15 </Text>
             </View>
         );
     }
