@@ -1,22 +1,53 @@
 import React, {Component} from "react";
 import {
     View,
-    Text,
-    StyleSheet,
     SafeAreaView,
-    ScrollView,
-    Dimensions,
     Image,
     Button,
     AsyncStorage
 } from "react-native";
 import {createDrawerNavigator, DrawerItems} from 'react-navigation-drawer';
-import Test9 from "../Screens/Test9.js";
-import Test16 from "../Screens/Test16";
-import Test14 from "../Screens/Test14";
-import Test10 from "../Screens/Test10";
 import FieldsScreen from "../Screens/FieldsScreen";
-import DO_NOT_DELETE from "../Screens/DO_NOT_DELETE";
+import {createStackNavigator} from 'react-navigation-stack';
+import {Icon} from "native-base";
+import DetailsOfCurrentField from "../Screens/DetailsOfCurrentField";
+
+const AppStackNavigator = createStackNavigator(
+    {
+        Fields: {
+            screen: FieldsScreen,
+            navigationOptions: ({navigation}) => {
+                return {
+                    title: "AgrilaFields",
+                    headerTitleStyle: {
+                        textAlign: "center",
+                        flexGrow: 1
+                    },
+                    headerLeft: (
+                        <Icon
+                            name="menu"
+                            size={35}
+                            onPress={() => navigation.openDrawer()}
+                            style={{padding: 10}}
+                        />
+                    )
+                }
+            }
+        },
+        Details: {
+            screen: DetailsOfCurrentField,
+            navigationOptions: ({navigation}) => {
+                return {
+                    title: navigation.getParam('title'),
+                    headerTitleStyle: {
+                        textAlign: "center",
+                        flexGrow: 1
+                    }
+                }
+            }
+        }
+    },
+);
 
 
 const CustomDrawerComponent = props => (
@@ -47,12 +78,7 @@ const logout = (props) => {
 };
 
 const DrawerNavigator = createDrawerNavigator({
-        Test15: {screen: FieldsScreen},
-        Test9: {screen: Test9},
-        Test16: {screen: Test16},
-        Test10: {screen: Test10},
-        Test14: {screen: Test14},
-        DO_NOT_DELETE: {screen: DO_NOT_DELETE}
+        AgrilaFields: {screen: AppStackNavigator}
     },
     {
         contentComponent: CustomDrawerComponent
