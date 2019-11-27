@@ -90,7 +90,7 @@ export default class FieldsScreen extends Component {
                         <ListItem
                             key={index}
                             title={item.description}
-                            subtitle={item.id}
+                            subtitle={JSON.stringify(item.id)}
                             bottomDivider
                             chevron
                             chevronColor='blue'
