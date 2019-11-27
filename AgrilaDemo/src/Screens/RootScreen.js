@@ -4,7 +4,6 @@ import AppNavigator from "../Navigators/AppNavigator";
 
 export default class RootScreen extends Component {
     render() {
-        console.log('test')
         return (
             <View style={{flex: 1}}>
                 <AppNavigator/>
