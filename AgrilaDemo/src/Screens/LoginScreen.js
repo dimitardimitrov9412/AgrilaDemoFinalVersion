@@ -19,6 +19,7 @@ import {
     Label
 } from "native-base";
 import LoginFrom from "../Components/Loginform";
+
 export default class LoginScreen extends Component {
     // constructor(props) {
     //   super(props);
@@ -36,18 +37,13 @@ export default class LoginScreen extends Component {
 
         return (
             <KeyboardAvoidingView
+                behavior={"padding"}
                 style={styles.container}
-                behavior="padding"
-                enabled
-                keyboardVerticalOffset={Platform.select({
-                    ios: () => 0,
-                    android: () => 200
-                })()}
             >
                 <View style={styles.logoContainer}>
                     <Image
                         source={require("../../assets/Images/agrila_logo_2097this.png")}
-                        style={{width: 350, height: 350}}
+                        style={{width: 225, height: 225}}
                     />
                     <Text style={styles.title}>Welcome to AGRILA!</Text>
                     <Text style={styles.title2}>

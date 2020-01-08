@@ -1,5 +1,5 @@
 //import liraries
-import React, { Component } from "react";
+import React, {Component} from "react";
 import {
     View,
     Text,
@@ -9,8 +9,8 @@ import {
     StatusBar,
     AsyncStorage
 } from "react-native";
-import { withNavigation } from "react-navigation";
-import { Item } from "native-base";
+import {withNavigation} from "react-navigation";
+import {Item} from "native-base";
 import Button from "../Components/Button";
 import axios from "axios";
 // create a component
@@ -26,12 +26,13 @@ export default class LoginFrom extends React.Component {
     }
 
     handleEmail = text => {
-        this.setState({ email: text });
+        this.setState({email: text});
     };
 
     handlePassword = text => {
-        this.setState({ password: text });
+        this.setState({password: text});
     };
+
     componentDidMount() {
         AsyncStorage.getItem("token", (err, result) => {
             if (result) {
@@ -46,6 +47,7 @@ export default class LoginFrom extends React.Component {
             }
         });
     }
+
     onLoginSubmit() {
         console.log(this.state.email, this.state.password);
         // const token = Authorization ='WXpNNU5qTXhOekl0WVdNNVlTMDBNemxsTFRsaE4yRXRNakZpTWpVMFpUVXdaRFU1Ok16Y3lNRGd3TURnek1qZ3hNREV5TUE9PTpiV0Z6ZEdWeQ=='
@@ -83,10 +85,12 @@ export default class LoginFrom extends React.Component {
                 }
             });
     }
+
     render() {
         return (
             <View style={styles.container}>
                 <StatusBar barStyle="light-content"></StatusBar>
+
                 <TextInput
                     placeholder="username or email"
                     placeholderTextColor="rgba(255,255,255,0.5)"
@@ -114,6 +118,8 @@ export default class LoginFrom extends React.Component {
                 >
                     <Text style={styles.buttonText}>Login</Text>
                 </Button>
+
+                <View style={{height: 25}}/>
                 {/* {this.state.error && <Text> ERROR </Text>} */}
             </View>
         );
@@ -123,14 +129,14 @@ export default class LoginFrom extends React.Component {
 // define your styles
 const styles = StyleSheet.create({
     container: {
-        padding: 20
+        padding: 10
     },
     input: {
-        height: 55,
+        height: 47,
         backgroundColor: "rgba(255,255,255,0.2 )",
         marginBottom: 20,
         color: "#FFF",
-        paddingHorizontal: 10,
+        paddingHorizontal: 15,
         fontSize: 21
     },
     buttonContainer: {
