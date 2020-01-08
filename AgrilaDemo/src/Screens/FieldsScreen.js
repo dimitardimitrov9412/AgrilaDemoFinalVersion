@@ -72,6 +72,43 @@ export default class FieldsScreen extends Component {
         this.setState({search});
     };
 
+    parseName(name) {
+        switch (name) {
+            case 'voltage':
+                return 'Заряд батерия';
+            case 'soilTemperature':
+                return 'Почвена температура';
+            case 'windDirection':
+                return 'Посока на вятъра';
+            case 'maxWindSpeed':
+                return 'Порив на вятъра';
+            case 'airTemperature':
+                return 'Темп.възудх';
+            case 'acreage':
+                return 'Площ[m²]';
+            case 'soilCategory':
+                return 'Тип почва';
+            case 'airHumidity':
+                return "Влажност на въздуха";
+            case 'regionTag':
+                return 'Регион';
+            case 'meanWindSpeed':
+                return "Скорост на вятъра";
+            case 'soilMoisture':
+                return "Почвена влага на 30см дълбочина";
+            case 'leafWetness':
+                return "Листна влага";
+            case 'rainAmountToday':
+                return "Валежна сума за 24 часа";
+            case 'soilMoisture2':
+                return "Почвена влага на 1м дълбочина";
+            default:
+                return 'unUsed';
+        }
+        ;
+    }
+
+
     componentDidMount() {
 
         this.loadData();
@@ -475,13 +512,12 @@ export default class FieldsScreen extends Component {
                                         flex: 1,
                                         flexDirection: 'row'
                                     }}
-                                    subtitleStyle={{
-                                        color: 'black',
-                                        fontWeight: 'bold',
-                                        fontSize: 17,
-                                        textAlign: 'left',
-                                        marginBottom: -5
-                                    }}
+                                    // subtitleStyle={{
+                                    //     color: 'black',
+                                    //     fontWeight: 'bold',
+                                    //     fontSize: 17,
+                                    //     textAlign: 'left',
+                                    // }}
                                     //subtitle={JSON.stringify(item.id)}
                                     bottomDivider
                                     chevron={{color: 'white', size: 30, fontWeight: 'bold'}}
